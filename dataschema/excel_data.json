@@ -1,0 +1,18 @@
+  {
+    "excel_data": [
+      {
+        "name": "test_file",
+        "path": "/home/garry/container_database/test_file",
+        "file_name": "test.xlsx",
+        "sheet_name": "Sheet1",
+        "column_details": {
+          "First Name": "str",
+          "Home Address": "str",
+          "Company": "category",
+          "Date of Birth": "datetime64[ns]",
+          "Time of Entry": {"data_type": "time","format":"%H:%M:%S"}
+          }
+        }
+    ]
+  }
+  

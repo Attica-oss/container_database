@@ -1,0 +1,74 @@
+# Excel Data Configurations
+
+This README file provides documentation for the JSON file containing Excel data configurations. The JSON file stores the details required to load and process Excel files.
+
+## JSON File Structure
+
+The JSON file follows the structure outlined below:
+
+```json
+  {
+    "excel_data": [
+      {
+        "name": "test_file",
+        "path": "/home/garry/container_database/test_file",
+        "file_name": "test.xlsx",
+        "sheet_name": "Sheet1",
+        "column_names": ["First Name", "Home Address", "Company","Date of Birth","Time of Entry"]
+      }
+    ]
+  }
+```
+
+The excel_data object contains individual configurations, each with a unique name (config_name). Each configuration includes the following attributes:
+
+path (string): The path to the directory where the Excel file is located.
+file_name (string): The name of the Excel file.
+sheet_name (string): The name of the sheet in the Excel file.
+column_names (list): A list of column names in the sheet.
+
+## Usage
+
+
+To load and process the Excel files based on the configurations in the JSON file, you can use the following Python code:
+
+```python
+import json
+import pandas as pd
+
+# Read the configuration file
+with open('excel_config.json', 'r') as config_file:
+    config_data = json.load(config_file)
+
+# Access and process Excel files
+excel_data = config_data["excel_data"]
+
+for config_name, config in excel_data.items():
+    path = config["path"]
+    file_name = config["file_name"]
+    sheet_name = config["sheet_name"]
+    column_names = config["column_names"]
+
+    excel_file_path = path + '/' + file_name
+    df = pd.read_excel(excel_file_path, sheet_name=sheet_name)
+    print(df[column_names])
+```
+
+In this code, the JSON configuration file is loaded, and the Excel files are accessed and processed based on their respective configurations.
+
+### Updating the JSON File
+
+To update the JSON file, simply modify the values within the excel_data object. You can add, remove, or modify individual configurations as needed.
+
+Make sure to follow the structure and syntax rules of JSON while making changes to the file.
+
+### Conclusion
+The JSON file allows you to store and manage Excel data configurations in a structured manner. By using this file, you can easily update and load Excel files based on the defined configurations, providing flexibility and convenience in your data processing tasks.
+
+For any further questions or assistance, please refer to the documentation or reach out to the developers [Contact Me](mailto:g.mounac@outloo.com)
+
+
+
+
+
+
