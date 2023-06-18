@@ -89,14 +89,3 @@ class ExcelData:
         excel_df = excel_df.rename(columns=lambda x: x.replace(" ", "_").lower())
 
         return excel_df
-
-
-if __name__ == '__main__':
-    # Your code for testing or running the module can be placed here
-
-    # Load and preprocess the Excel file using the config named 'test_file'
-    preprocessed_df = ExcelData.get_excel_schema('test_file').load_excel()
-
-    # Use the preprocessed DataFrame as needed
-    print(preprocessed_df)
-    print(preprocessed_df.dtypes)

@@ -12,7 +12,22 @@
           "Date of Birth": "datetime64[ns]",
           "Time of Entry": {"data_type": "time","format":"%H:%M:%S"}
           }
+        },
+      {
+        "name": "salary",
+        "path": "/home/garry/container_database/test_file",
+        "file_name": "salary_data.xlsx",
+        "sheet_name": "Salary_Data",
+        "column_details": {
+          "Age": "int",
+          "Gender": "category",
+          "Education Level":"category",
+          "Job Title": "str",
+          "Years of Experience": "int",
+          "Salary": "int"
+          }
         }
+
     ]
   }
   

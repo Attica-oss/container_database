@@ -24,7 +24,7 @@ def duration_in_days(date: datetime) -> int:
     """
     custom_date = CustomDate(date.year, date.month, date.day)
     duration = custom_date.duration()
-    return f'{duration:,}'
+    return duration
 
 
 def format_date(date: datetime) -> str:
